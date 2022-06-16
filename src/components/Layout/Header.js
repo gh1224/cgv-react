@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 import './Header.css';
 import logo from 'assets/img/logo.png';
@@ -6,8 +7,21 @@ import loginIcon from 'assets/img/login.png';
 import signupIcon from 'assets/img/join.png';
 import mypageIcon from 'assets/img/my.png';
 import supportIcon from 'assets/img/service-center.png';
+import searchIcon from 'assets/img/search.png';
 
 const Header = () => {
+    const [searchKey, setSearchKey] = useState('');
+    const navigate = useNavigate();
+
+    const handleSearchKeyChange = (e) => {
+        setSearchKey(e.target.value);
+    }
+
+    const handleSearchKeySubmit = (e) => {
+        e.preventDefault();
+        navigate('/search?key=' + searchKey);
+    }
+
     return (
         <header>
             <div id="title-bar">
@@ -22,7 +36,12 @@ const Header = () => {
             <div id="nav-bar">
                 <nav className="container">
                     <MovieNavList />
-                    <div>검색창</div>
+                    <form onSubmit={handleSearchKeySubmit}>
+                        <input type="text" value={searchKey} onChange={handleSearchKeyChange} />
+                        <button type="submit">
+                            <img src={searchIcon} alt="검색 아이콘" />
+                        </button>
+                    </form>
                 </nav>
             </div>
         </header>

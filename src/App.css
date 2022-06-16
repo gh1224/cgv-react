@@ -17,7 +17,14 @@ a {
     text-decoration: none;
 }
 
-a:focus {
+button {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+a:focus, button:focus {
     outline: 3px solid #ead3d7;
 }
 
