@@ -18,44 +18,60 @@ class Header extends React.Component {
                             <Link to="/"><img src={logo} alt="CGV 로고" /></Link>
                             <span>CULTUREPLEX</span>
                         </div>
-                        <ul>
-                            <li>
-                                <Link to="/login">
-                                    <img src={loginIcon} alt="로그인 아이콘" />
-                                    <span>로그인</span>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/signup">
-                                    <img src={signupIcon} alt="회원가입 아이콘" />
-                                    <span>회원가입</span>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/mypage">
-                                    <img src={mypageIcon} alt="마이페이지 아이콘" />
-                                    <span>MY CGV</span>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/support">
-                                    <img src={supportIcon} alt="고객센터 아이콘" />
-                                    <span>고객센터</span>
-                                </Link>
-                            </li>
-                        </ul>
+                        <UserNavList />
                     </div>
                 </div>
                 <div id="nav-bar">
                     <nav className="container">
-                        <ul>
-                            <li><Link to="/movie">영화</Link></li>
-                            <li><Link to="/theater">극장</Link></li>
-                        </ul>
+                        <MovieNavList />
                         <div>검색창</div>
                     </nav>
                 </div>
             </header>
+        );
+    }
+}
+
+class UserNavList extends React.Component {
+    render() {
+        return (
+            <ul>
+                <li>
+                    <Link to="/login">
+                        <img src={loginIcon} alt="로그인 아이콘" />
+                        <span>로그인</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/signup">
+                        <img src={signupIcon} alt="회원가입 아이콘" />
+                        <span>회원가입</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/mypage">
+                        <img src={mypageIcon} alt="마이페이지 아이콘" />
+                        <span>MY CGV</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/support">
+                        <img src={supportIcon} alt="고객센터 아이콘" />
+                        <span>고객센터</span>
+                    </Link>
+                </li>
+            </ul>
+        );
+    }
+}
+
+class MovieNavList extends React.Component {
+    render() {
+        return (
+            <ul>
+                <li><Link to="/movie">영화</Link></li>
+                <li><Link to="/theater">극장</Link></li>
+            </ul>
         );
     }
 }
