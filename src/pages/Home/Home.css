@@ -1,0 +1,219 @@
+:root {
+    --boxWidth: 170.4px;
+    --boxHeight: 295px;
+    --boxSpace: 32px;
+    --boxNum: 5;
+    --boxMaxNum: 20;
+}
+
+main > article {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(232, 232, 232, 0.37));
+}
+
+main > article > div.container {
+    padding: 50px 30px 60px;
+}
+
+main > article > div.container > header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+main > article > div.container > header > h3 {
+    font-weight: 700;
+    color: #222;
+    font-size: 26px;
+    line-height: 37px;
+    display: inline;
+    margin: 0;
+}
+
+main > article > div.container > header > a {
+    padding: 4px 32px 4px 15px;
+    font-size: 14px;
+    color: #222;
+    line-height: 20px;
+    background: transparent url(../../assets/img/arrowR.png) calc(100% - 7px) center/8px 13px scroll no-repeat;
+    border: 1px solid #e2e2e2;
+    border-radius: 15px;
+    box-shadow: 1px 1px 1px 0 rgb(0 0 0 / 5%);
+}
+
+main > article > div.container > section {
+    position: relative;
+}
+
+#poster-box {
+    overflow: hidden;
+}
+
+#poster-box > div {
+    display: flex;
+    width: calc((var(--boxWidth) + var(--boxSpace)) * var(--boxMaxNum));
+    transition: all 0.3s;
+}
+
+#poster-box > div > ul {
+    display: flex;
+    justify-content: space-between;
+    width: calc(var(--boxWidth) * var(--boxNum) + var(--boxSpace) * (var(--boxNum) - 1));
+    margin-right: var(--boxSpace);
+}
+
+#poster-box > div > ul > li {
+    width: var(--boxWidth);
+    height: var(--boxHeight);
+}
+
+.movie-poster {
+    position: relative;
+    height: 234px;
+}
+
+.movie-poster > img:first-child {
+    width: 170px;
+    height: 234px;
+    border-radius: 10px;
+}
+
+.movie-poster:hover > img:first-child {
+    box-shadow: 6px 10px 20px 0 rgb(0 0 0 / 40%);
+}
+
+.movie-poster > img:nth-child(2) {
+    position: absolute;
+    top: 7px;
+    right: 6px;
+    width: 22px;
+    height: 22px;
+}
+
+.movie-poster:hover > img:nth-child(2) {
+    display: none;
+}
+
+.movie-poster > div {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 170px;
+    height: 234px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.movie-poster:hover > div {
+    display: flex;
+}
+
+.movie-poster > div > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 34px;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 19px;
+    border-radius: 4px;
+    margin: 3px;
+    outline: none;
+}
+
+.movie-poster:hover > div > a:hover {
+    opacity: 0.8;
+}
+
+.movie-poster > div > a:first-child {
+    color: #666;
+    background-color: #fff;
+}
+
+.movie-poster > div > a:last-child {
+    color: #fff;
+    background-color: #fb4357;
+}
+
+.movie-info {
+    margin-top: 14px;
+}
+
+.movie-info > div:first-child {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21px;
+    color: #222;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+
+.movie-info > div:last-child {
+    display: flex;
+    font-size: 14px;
+    color: #444;
+    margin-top: 9px;
+    line-height: 17px;
+}
+
+.movie-info > div:last-child > div:first-child {
+    display: flex;
+    align-items: center;
+}
+
+.movie-info > div:last-child > div:first-child > img {
+    height: 14px;
+    margin-left: 3px;
+    margin-right: 5px;
+}
+
+.movie-info > div:last-child > div:last-child::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: calc(50% - 5px);
+    width: 0.5px;
+    height: 10px;
+    background-color: #ededed;
+}
+
+.movie-info > div:last-child > div:last-child {
+    position: relative;
+    padding-left: 16px;
+}
+
+#movie-prev-btn,
+#movie-next-btn {
+    display: none;
+    position: absolute;
+    top: 97px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.8) url(../../assets/img/arrowL.png) center/9px 13px scroll no-repeat;
+}
+
+#movie-prev-btn {
+    left: -20px;
+    box-shadow: 2px 2px 8px 0 rgb(0 0 0 / 20%);
+}
+
+#movie-next-btn {
+    right: -20px;
+    transform: rotate(-180deg);
+    box-shadow: -2px -2px 8px 0 rgb(0 0 0 / 20%);
+}
+
+#movie-prev-btn.active,
+#movie-next-btn.active {
+    display: block;
+}
