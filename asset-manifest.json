@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/cgv-react/static/css/main.bb521aca.css",
-    "main.js": "/cgv-react/static/js/main.f3b1c9a3.js",
+    "main.css": "/cgv-react/static/css/main.ad3051fb.css",
+    "main.js": "/cgv-react/static/js/main.717667bd.js",
     "static/js/787.2de1685b.chunk.js": "/cgv-react/static/js/787.2de1685b.chunk.js",
+    "static/media/star.png": "/cgv-react/static/media/star.618d11e122cbca3f8e9e.png",
     "index.html": "/cgv-react/index.html",
-    "main.bb521aca.css.map": "/cgv-react/static/css/main.bb521aca.css.map",
-    "main.f3b1c9a3.js.map": "/cgv-react/static/js/main.f3b1c9a3.js.map",
+    "main.ad3051fb.css.map": "/cgv-react/static/css/main.ad3051fb.css.map",
+    "main.717667bd.js.map": "/cgv-react/static/js/main.717667bd.js.map",
     "787.2de1685b.chunk.js.map": "/cgv-react/static/js/787.2de1685b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bb521aca.css",
-    "static/js/main.f3b1c9a3.js"
+    "static/css/main.ad3051fb.css",
+    "static/js/main.717667bd.js"
   ]
 }
