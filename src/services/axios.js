@@ -1,8 +1,8 @@
-import * as axiosDefault from 'axios';
+import axios from 'axios';
 
-const axios = axiosDefault.create({
+const instance = axios.create({
     baseURL: 'https://cgv-clone.herokuapp.com',
     withCredentials: true
 });
 
-export default axios;
+export default instance;
