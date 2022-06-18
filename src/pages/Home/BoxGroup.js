@@ -1,9 +1,9 @@
 import Box from './Box';
 
-const BoxGroup = (props) => {
+const BoxGroup = ({ movieList }) => {
     return (
         <ul>
-            {props.movieList.map((movie, idx) =>
+            {movieList.map((movie, idx) =>
                 <Box key={idx} movie={movie} />
             )}
         </ul>

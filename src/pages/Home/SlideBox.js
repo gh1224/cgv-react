@@ -44,14 +44,12 @@ const SlideBox = () => {
     );
 };
 
-const BoxGroupList = (props) => {
-    const len = props.movieList.length;
-    const chunckSize = props.chunkSize;
-
+const BoxGroupList = ({ movieList, chunkSize }) => {
     const chunkedList = [];
-    for (let i = 0; i < len; i += chunckSize) {
-        const end = (i + chunckSize) < len ? (i + chunckSize) : len;
-        chunkedList.push(props.movieList.slice(i, end));
+    const len = movieList.length;
+    for (let i = 0; i < len; i += chunkSize) {
+        const end = (i + chunkSize) < len ? (i + chunkSize) : len;
+        chunkedList.push(movieList.slice(i, end));
     }
 
     return chunkedList.map((chunk, idx) =>

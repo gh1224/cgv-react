@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import noneIcon from 'assets/img/grade-none.png';
@@ -8,9 +7,7 @@ import fifteenIcon from 'assets/img/grade-15.png';
 import onlyAdultIcon from 'assets/img/grade-19.png';
 import starIcon from 'assets/img/star.png';
 
-const Box = (props) => {
-    const [movie] = useState(props.movie);
-
+const Box = ({ movie }) => {
     const ratingIcons = {
         NONE: noneIcon,
         ALL: allIcon,
