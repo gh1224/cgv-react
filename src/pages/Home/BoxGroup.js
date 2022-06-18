@@ -1,13 +1,11 @@
 import Box from './Box';
 
-const BoxGroup = () => {
+const BoxGroup = (props) => {
     return (
         <ul>
-            <Box />
-            <Box />
-            <Box />
-            <Box />
-            <Box />
+            {props.movieList.map((movie, idx) =>
+                <Box key={idx} movie={movie} />
+            )}
         </ul>
     );
 };
